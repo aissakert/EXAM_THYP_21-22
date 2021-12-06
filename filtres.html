@@ -73,9 +73,9 @@
 
     function showItems(data) {
       document.getElementById('items').innerHTML = "";
-      let cards = d3.select('#items').selectAll(".col-4").data(data).enter()
-        .append('div').attr('class', 'col-sm-4 mb-12').style('margin-bottom', '13px')
-        .append("div").attr('class', 'card');
+      let cards = d3.select('#items').selectAll(".col-6").data(data).enter()
+        .append('div').attr('class', 'col-sm-6 mb-12').style('margin-bottom', '13px')
+        .append("div").attr('class', 'card border-0 shadow-sm');
 
       let cardBody = cards.append('div').attr('class', 'card-body');
       cardBody
@@ -103,5 +103,4 @@
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
 </body>
-
 </html>
