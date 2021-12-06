@@ -12,56 +12,6 @@
 </head>
 
 <body>
-  <div class="container">
-    <h1 style="text-align: center;">Examen THYP du 6 decembre 2021</h1>
-    <h2 style="text-align: center;">KERT Aissa</h2>
-    <h3 style="text-align: center;"> liste des Items</h3>
-    <div class="row" id="items">
-    </div>
-  </div>
-  </div>
-  <script>
-    url = "https://polemika.univ-paris8.fr/omk/api/items?item_set_id=2";
-    getData(url);
-
-    function getData(url) {
-      d3.queue()
-        .defer(d3.json, url)
-        .awaitAll(function (error, results) {
-          if (error) throw error;
-          showItems(results[0]);
-        });
-    }
-    function showItems(data) {
-
-      let cards = d3.select('#items').selectAll(".col-3").data(data).enter()
-        .append('div').attr('class', 'col-sm-4 mb-12').style('margin-bottom', '10px')
-        .append("div").attr('class', 'card');
-
-      let cardBody = cards.append('div').attr('class', 'card-body');
-      cardBody
-        .append('h5').text((d) => d["o:id"])
-        .append('h6').text((d) => d["o:title"])
-        .append('img')
-        .attr('id', (d, i) => 'imgCard' + d["o:id"])
-        .attr('class', 'center card-img-top')
-        .attr('src', (d) => {
-          d3.json(d["o:media"][0]["@id"], function (error, results) {
-            if (error) throw error;
-            d3.select("#" + "imgCard" + d["o:id"]).attr("src", results["o:source"]);
-          });
-        });
-
-    }
-  </script>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-    crossorigin="anonymous"></script>
+ 
 </body>
 </html>
