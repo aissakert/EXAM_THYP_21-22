@@ -4,62 +4,46 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix o: <http://omeka.org/s/vocabs/o#> .
-@prefix ma: <http://www.w3.org/ns/ma-ont#>.
-@prefix mo: <http://data.press.net/ontology/asset#>.
-@prefix onto: <https://github.com/aissakert/EXAM_THYP_21-22#> .
-
-<https://github.com/aissakert/EXAM_THYP_21-22#> a owl:Ontology ;
-    dcterms:title "Press news" .
-
-news:Auter a rdfs:Class ;
-    rdfs:label "Auter" ;
-    rdfs:domain o:Resource ;
-    vs:term_status "experimental" .
-
-news: reference a rdfs:Class ;
-    rdfs:label "reference" ;
-    rdfs:domain o:Resource ;
-    owl:sameAs mo:Transcription;
-    vs:term_status "experimental" .
-
-news:sujet a rdf:Property ;
-    rdfs:label "sujet" ;
-    rdfs:domain o:Resource ;
-    vs:term_status "experimental" .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix bibo:  <http://purl.org/ontology/bibo/> .
 
 
-news:sortie a rdf:Property ;
-    rdfs:label "sortie" ;
-    rdfs:domain o:Resource ;
-    vs:term_status "experimental" .
+@prefix news: <https://aissakert.github.io/EXAM_THYP_21-22//vocab.ttl#> .
+
+<https://aissakert.github.io/EXAM_THYP_21-22//vocab.ttl#> a owl:Ontology ;
+   dcterms:title "News" .
 
 
-news:Images a rdf:Property ;
-    rdfs:label "Images" ;
-    rdfs:domain o:Resource .
 
-news:Videos a rdf:Property ;
-    rdfs:label "Videos" ;
-    rdfs:domain o:Resource .
+news:news a rdfs:Class ;
+   rdfs:label "News" ;
+   rdfs:domain o:Resource ;
+   vs:term_status "experimental" .
 
+news:author  a rdfs:Class ;
+   rdfs:label "Author " ;
+   rdfs:domain o:Resource ;
+ 
+   vs:term_status "experimental" .
+   
+news:Article  a rdfs:Class ;
+   rdfs:label "Article" ;
+   rdfs:domain o:Resource ;
+   owl:sameAs bibo:Article ;
+news:hasFirstname a rdf:Property ;
+   rdfs:label "prenom" ;
+   rdfs:domain o:Resource ;
+   owl:sameAs foaf:firstname ;
+   vs:term_status "experimental" .
 
-news:naissance a rdf:Property ;
-    rdfs:label "age" ;
-    rdfs:domain o:Resource ;
-    vs:term_status "naissance" .
+news:hasLastname a rdf:Property ;
+   rdfs:label "nom" ;
+   rdfs:domain o:Resource ;
+   owl:sameAs foaf:lastname ;
+   vs:term_status "experimental" .
 
-news:Nom_complet a rdf:Property ;
-    rdfs:label "Nom_complet" ;
-    rdfs:domain o:Resource ;
-    vs:term_status "experimental" .
-
-	
-	news:email a rdf:Property ;
-    rdfs:label "email" ;
-    rdfs:domain o:Resource ;
-    vs:term_status "experimental" .
-
-    news:Biographies a rdf:Property ;
-    rdfs:label "Biographies" ;
-    rdfs:domain o:Resource ;
-    vs:term_status "experimental" .
+  
+      news:Date a rdf:Property ;
+   rdfs:label "Date" ;
+   rdfs:domain o:Resource ;
+   vs:term_status "experimental" .
