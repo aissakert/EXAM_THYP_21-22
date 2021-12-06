@@ -3,6 +3,7 @@
 
 <head>
   <title>Examen THYP 6 Décembre 2021</title>
+
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <script src="https://use.fontawesome.com/2ddc4a0f9c.js"></script>
@@ -11,7 +12,7 @@
   <script src="https://d3js.org/d3.v4.min.js"></script>
 </head>
 
-<body>
+<body style="background-color: linebreaks !important">
   <div class="container">
     <h1 style="text-align: center;">Examen THYP du 6 decembre 2021</h1>
     <h2 style="text-align: center;">KERT Aissa</h2>
@@ -34,9 +35,9 @@
     }
     function showItems(data) {
 
-      let cards = d3.select('#items').selectAll(".col-3").data(data).enter()
-        .append('div').attr('class', 'col-sm-4 mb-12').style('margin-bottom', '10px')
-        .append("div").attr('class', 'card');
+      let cards = d3.select('#items').selectAll(".col-6").data(data).enter()
+        .append('div').attr('class', 'col-sm-6').style('margin-bottom', '10px')
+        .append("div").attr('class', 'card border-0 shadow-sm');
 
       let cardBody = cards.append('div').attr('class', 'card-body');
       cardBody
