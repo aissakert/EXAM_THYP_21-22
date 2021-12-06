@@ -1,4 +1,3 @@
-
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -12,70 +11,55 @@
 <https://github.com/aissakert/EXAM_THYP_21-22#> a owl:Ontology ;
     dcterms:title "Press news" .
 
-
-
-news:Auteur a rdfs:Class ;
-    rdfs:label "Autheur" ;
+news:Auter a rdfs:Class ;
+    rdfs:label "Auter" ;
     rdfs:domain o:Resource ;
     vs:term_status "experimental" .
 
-news:Article a rdfs:Class ;
-    rdfs:label "Article" ;
+news: reference a rdfs:Class ;
+    rdfs:label "reference" ;
     rdfs:domain o:Resource ;
     owl:sameAs mo:Transcription;
     vs:term_status "experimental" .
 
-news:Titre a rdf:Property ;
-    rdfs:label "titre" ;
+news:sujet a rdf:Property ;
+    rdfs:label "sujet" ;
     rdfs:domain o:Resource ;
     vs:term_status "experimental" .
 
 
-news:Date_sortie a rdf:Property ;
-    rdfs:label "Date_sortie" ;
+news:sortie a rdf:Property ;
+    rdfs:label "sortie" ;
     rdfs:domain o:Resource ;
     vs:term_status "experimental" .
 
 
-news:Image a rdf:Property ;
-    rdfs:label "Image" ;
+news:Images a rdf:Property ;
+    rdfs:label "Images" ;
     rdfs:domain o:Resource .
 
-news:Video a rdf:Property ;
-    rdfs:label "Video" ;
-    rdfs:domain o:Resource .
-
-news:Texte a rdf:Property;
-    rdfs:label "Texte" ;
+news:Videos a rdf:Property ;
+    rdfs:label "Videos" ;
     rdfs:domain o:Resource .
 
 
-news:Rubrique a rdf:Property ;
-    rdfs:label "rubrique" ;
-    rdfs:domain o:Resource ;
-    vs:term_status "experimental" .
-
-news:Age a rdf:Property ;
+news:naissance a rdf:Property ;
     rdfs:label "age" ;
     rdfs:domain o:Resource ;
-    vs:term_status "experimental" .
+    vs:term_status "naissance" .
 
-news:Nom a rdf:Property ;
-    rdfs:label "Nom" ;
+news:Nom_complet a rdf:Property ;
+    rdfs:label "Nom_complet" ;
     rdfs:domain o:Resource ;
     vs:term_status "experimental" .
 
-news:Prenom a rdf:Property ;
-    rdfs:label "prenom" ;
-    rdfs:domain o:Resource ;
-    vs:term_status "experimental" .
 	
 	news:email a rdf:Property ;
     rdfs:label "email" ;
     rdfs:domain o:Resource ;
     vs:term_status "experimental" .
 
-    news:Biographie a rdf:Property ;
-    rdfs:label "Biographie" ;
+    news:Biographies a rdf:Property ;
+    rdfs:label "Biographies" ;
     rdfs:domain o:Resource ;
     vs:term_status "experimental" .
